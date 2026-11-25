@@ -13,17 +13,17 @@
    DESIGN TOKENS – ret farver og fonte her
    ===================================================================== */
 :root{
-  --red:#713A3E;
-  --red-dark:#542A2D;
-  --red-hot:#D8AAA5;
-  --red-tint:#F2E9E6;
-  --ink:#1C1A18;
-  --ink-2:#272421;
-  --paper:#F8F6F1;
-  --soft:#F0EDE7;
-  --line:#DED8CE;
-  --muted:#625D55;
-  --muted-dark:#C6BFB5;
+  --red:#690003;
+  --red-dark:#430002;
+  --red-hot:#E8A6A3;
+  --red-tint:#F4E8E6;
+  --ink:#211B1A;
+  --ink-2:#302625;
+  --paper:#FAF8F4;
+  --soft:#F2EEE8;
+  --line:#E5DED5;
+  --muted:#625A54;
+  --muted-dark:#D4C9C1;
   --display:"Cormorant Garamond",Georgia,serif;
   --body:"DM Sans",system-ui,sans-serif;
   --radius:5px;
@@ -32,7 +32,7 @@
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--body);color:var(--ink);background:linear-gradient(180deg,#FFFEFC 0%,#FAF8F4 55%,#F7F3ED 100%);line-height:1.55;-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
 a{color:var(--red)}
 a:hover{color:var(--red-dark)}
@@ -80,38 +80,40 @@ header{position:sticky;top:0;z-index:40;background:rgba(28,26,24,.78);backdrop-f
 @media (max-width:900px){.nav ul{display:none}}
 
 /* =========================== HERO =========================== */
-.hero{position:relative;background:linear-gradient(125deg,#191715 10%,#24211e 58%,#302725);color:#fff;overflow:hidden;padding:88px 0 96px}
-.hero::before{content:"";position:absolute;right:-12%;top:8%;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(177,126,126,.36) 0%,rgba(113,58,62,.2) 38%,rgba(113,58,62,0) 70%);pointer-events:none}
+.hero{position:relative;background:linear-gradient(125deg,#FFFEFC 0%,#FAF8F4 58%,#F4EEE7 100%);color:var(--ink);overflow:hidden;padding:88px 0 96px}
+.hero::before{content:"";position:absolute;right:-12%;top:8%;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(105,0,3,.09) 0%,rgba(105,0,3,.045) 38%,rgba(105,0,3,0) 70%);pointer-events:none}
 .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
-.heritage{margin-bottom:16px;color:var(--red-hot);font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.heritage span{padding:0 7px;color:rgba(255,255,255,.5)}
-.pill{display:inline-flex;max-width:100%;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:9px 13px;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.035));box-shadow:inset 0 1px rgba(255,255,255,.18),0 10px 24px rgba(0,0,0,.12);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);font-family:var(--body);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--red-hot);box-shadow:none;animation:none}
+.heritage{margin-bottom:16px;color:var(--red);font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.heritage span{padding:0 7px;color:rgba(33,27,26,.42)}
+.pill{display:inline-flex;max-width:100%;align-items:center;gap:10px;border:1px solid rgba(105,0,3,.15);border-radius:4px;padding:9px 13px;background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,255,255,.58));color:var(--ink);box-shadow:inset 0 1px rgba(255,255,255,.95),0 8px 22px rgba(67,0,2,.07);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);font-family:var(--body);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:none;animation:none}
 @keyframes pulse{70%{box-shadow:0 0 0 12px rgba(255,74,85,0)}100%{box-shadow:0 0 0 0 rgba(255,74,85,0)}}
 .hero h1{font-size:clamp(68px,9vw,132px);font-weight:600;margin:24px 0}
-.hero h1 em{font-style:italic;color:var(--red-hot)}
-.hero .lead{color:#d6d0c8;margin-bottom:28px}
-.hero .lead strong{color:#fff}
+.hero h1 em{font-style:italic;color:var(--red)}
+.hero .lead{color:var(--muted);margin-bottom:28px}
+.hero .lead strong{color:var(--ink)}
+.hero .btn-line-light{border-color:rgba(33,27,26,.38);color:var(--ink);background:rgba(255,255,255,.38)}
+.hero .btn-line-light:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
-.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;color:#d6d0c8;font-size:15px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;color:var(--muted);font-size:15px}
 .hero-meta span{display:inline-flex;align-items:center;gap:8px}
-.hero-meta svg{width:18px;height:18px;color:var(--red-hot)}
-.hero-visual{position:relative;height:520px}
-.hero-visual .hd{position:absolute;width:62%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
-.hero-visual .h1x{left:-2%;top:70px;transform:rotate(-9deg)}
-.hero-visual .h2x{left:19%;top:6px;z-index:2;width:64%}
-.hero-visual .h3x{right:-2%;top:84px;transform:rotate(9deg)}
-.only-here{position:absolute;z-index:3;left:50%;bottom:14px;transform:translateX(-50%);background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(248,246,241,.62));color:var(--ink);border:1px solid rgba(255,255,255,.78);border-radius:5px;padding:12px 20px;text-align:center;box-shadow:inset 0 1px rgba(255,255,255,.95),0 12px 30px rgba(0,0,0,.22);backdrop-filter:blur(20px) saturate(145%);-webkit-backdrop-filter:blur(20px) saturate(145%);white-space:nowrap}
+.hero-meta svg{width:18px;height:18px;color:var(--red)}
+.hero-visual{position:relative;height:420px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:0;padding:4px 0 56px}
+.hero-visual .hd{position:relative;width:150%;max-width:none;height:auto;margin-left:-25%;filter:drop-shadow(0 18px 22px rgba(67,0,2,.14));transform:none}
+.hero-visual .h1x{order:0}
+.hero-visual .h2x{order:1;z-index:1}
+.hero-visual .h3x{order:2}
+.only-here{position:absolute;z-index:3;left:50%;bottom:14px;transform:translateX(-50%);background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,255,255,.68));color:var(--ink);border:1px solid rgba(105,0,3,.12);border-radius:5px;padding:12px 20px;text-align:center;box-shadow:inset 0 1px rgba(255,255,255,.98),0 12px 30px rgba(67,0,2,.12);backdrop-filter:blur(20px) saturate(145%);-webkit-backdrop-filter:blur(20px) saturate(145%);white-space:nowrap}
 .only-here b{display:block;font-family:var(--display);font-weight:600;font-size:26px;line-height:1;color:var(--red)}
 .only-here span{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-@media (max-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-visual{height:400px;max-width:560px;width:100%;margin:0 auto}.hero::before{right:-40%;top:40%}}
-@media (max-width:520px){.hero-visual{height:300px}.only-here b{font-size:20px}}
+@media (max-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-visual{height:360px;max-width:560px;width:100%;margin:0 auto}.hero::before{right:-40%;top:40%}}
+@media (max-width:520px){.hero-visual{height:280px;gap:0;padding-bottom:58px}.hero-visual .hd{width:150%;margin-left:-25%}.only-here b{font-size:20px}}
 
 /* =========================== TICKER =========================== */
-.ticker{background:#EAE6DE;color:var(--ink);overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ticker{background:#FFF;color:var(--ink);overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .ticker-track{display:inline-flex;animation:ticker 44s linear infinite;padding:13px 0}
 .ticker-track span{font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:0 22px;display:inline-flex;align-items:center;gap:44px}
-.ticker-track span::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff;opacity:.7}
+.ticker-track span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);opacity:.85}
 .ticker .bw{height:.8em}
 @keyframes ticker{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.ticker-track,.live-dot{animation:none}}
@@ -122,7 +124,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(28,26,24,.78);backdrop-f
 a.feature:hover{transform:translateY(-3px);border-color:var(--ink);color:inherit}
 .feature .ico{width:52px;height:52px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;margin-bottom:6px}
 .feature .ico svg{width:28px;height:28px}
-.feature.hot{background:linear-gradient(145deg,rgba(113,58,62,.94),rgba(72,39,41,.88));border-color:rgba(255,255,255,.32);color:#fff;box-shadow:inset 0 1px rgba(255,255,255,.24),0 18px 38px rgba(60,32,32,.16)}
+.feature.hot{background:linear-gradient(145deg,rgba(105,0,3,.96),rgba(67,0,2,.94));border-color:rgba(255,255,255,.32);color:#fff;box-shadow:inset 0 1px rgba(255,255,255,.24),0 18px 38px rgba(60,12,16,.16)}
 .feature.hot .ico{background:#fff;color:var(--red)}
 .feature.hot p{color:#ffe1e3}
 .feature b{font-family:var(--display);font-weight:800;font-size:30px;line-height:1;text-transform:uppercase}
@@ -176,11 +178,11 @@ a.feature:hover{transform:translateY(-3px);border-color:var(--ink);color:inherit
 .tee-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .tee{border:1px solid rgba(255,255,255,.9);border-radius:7px;overflow:hidden;display:flex;flex-direction:column;background:rgba(255,255,255,.72);box-shadow:inset 0 1px rgba(255,255,255,.95),0 12px 34px rgba(49,39,29,.07);backdrop-filter:blur(16px) saturate(130%);-webkit-backdrop-filter:blur(16px) saturate(130%);transition:box-shadow .2s,transform .2s,border-color .2s}
 .tee:hover{box-shadow:0 18px 36px rgba(28,26,24,.08);transform:translateY(-3px)}
-.tee.is-picked{border-color:var(--red);box-shadow:0 18px 36px rgba(113,58,62,.13)}
+.tee.is-picked{border-color:var(--red);box-shadow:0 18px 36px rgba(105,0,3,.13)}
 .stage{position:relative;padding:26px 30px 10px}
-.stage-os{background:linear-gradient(145deg,#F1EEE8,#E2DDD4)}
-.stage-xo{background:linear-gradient(145deg,#E7E4DE,#D1CDC5)}
-.stage-fv{background:linear-gradient(145deg,#E8EBE2,#D5DCCF)}
+.stage-os{background:linear-gradient(145deg,#FBFAF7,#F0ECE7)}
+.stage-xo{background:linear-gradient(145deg,#F5F3F1,#E9E5E3)}
+.stage-fv{background:linear-gradient(145deg,#F0F3EC,#E2E9DD)}
 .stage .tag{position:absolute;top:16px;left:16px;background:rgba(248,246,241,.9);color:var(--ink);font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:2px}
 .stage .match{display:none;position:absolute;top:16px;right:16px;background:var(--red);color:#fff;font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:2px}
 .tee-wreath-light{filter:brightness(0) invert(1)}
@@ -260,7 +262,7 @@ a.feature:hover{transform:translateY(-3px);border-color:var(--ink);color:inherit
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;height:50px;border:1px solid #D3CCC3;border-radius:3px;padding:0 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff}
 .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23121212' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:40px}
-.field input:focus,.field select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(184,20,31,.16)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(105,0,3,.16)}
 .pick{display:flex;flex-wrap:wrap;gap:8px}
 .pick input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
 .pick label{display:inline-flex;align-items:center;min-height:44px;padding:0 15px;border:1px solid #D3CCC3;border-radius:3px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .15s,background .15s}
@@ -293,7 +295,7 @@ a.feature:hover{transform:translateY(-3px);border-color:var(--ink);color:inherit
 
 /* =========================== SLUT-CTA + FOOTER =========================== */
 .final{background:var(--ink);color:#fff;padding:96px 0;text-align:center;position:relative;overflow:hidden}
-.final::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(113,58,62,.32),rgba(113,58,62,0) 60%);pointer-events:none}
+.final::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(105,0,3,.32),rgba(105,0,3,0) 60%);pointer-events:none}
 .final .wrap{position:relative}
 .final h2{font-size:clamp(56px,8vw,116px);font-weight:600;margin:14px 0 22px}
 .final h2 em{font-style:italic;color:var(--red-hot)}
@@ -320,16 +322,24 @@ footer .logo{height:64px;margin-bottom:16px}
 .urgent-bar u{font-weight:700;text-underline-offset:3px}
 .urgent-bar .live-dot{background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.6)}
 .spots{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:16px 18px;margin-bottom:24px;max-width:560px;box-shadow:inset 0 1px rgba(255,255,255,.17),0 12px 28px rgba(0,0,0,.12);backdrop-filter:blur(18px) saturate(130%);-webkit-backdrop-filter:blur(18px) saturate(130%)}
+.hero .spots{background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(255,255,255,.44));border-color:rgba(105,0,3,.12);box-shadow:inset 0 1px rgba(255,255,255,.95),0 12px 28px rgba(67,0,2,.07)}
 .spots-top,.spots-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;font-size:14px}
 .spots-top{color:#e9e4dd;margin-bottom:10px}
+.hero .spots-top{color:var(--muted)}
 .spots-top b{color:#fff}
+.hero .spots-top b,.hero .cd b{color:var(--ink)}
 .spots-left{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--red-hot)}
 .spots-left b{color:var(--red-hot)}
+.hero .spots-left,.hero .spots-left b{color:var(--red)}
 .bar{height:10px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
 .bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#ff7a82,var(--red-hot));transition:width .8s ease}
+.hero .bar{background:rgba(105,0,3,.12)}
+.hero .bar i{background:linear-gradient(90deg,#A94A4D,var(--red))}
 .spots-bottom{color:#b9b3ab;margin-top:10px}
+.hero .spots-bottom{color:var(--muted)}
 .cd{display:inline-flex;align-items:center;gap:7px}
 .cd svg{width:16px;height:16px;color:var(--red-hot)}
+.hero .cd svg{color:var(--red)}
 .cd b{color:#fff}
 .spots.on-red{background:rgba(0,0,0,.18);border-color:rgba(255,255,255,.28);margin:24px 0 8px}
 .spots.on-red .spots-left,.spots.on-red .spots-left b{color:#fff}
@@ -506,31 +516,31 @@ footer .logo{height:64px;margin-bottom:16px}
   </symbol>
 
   <symbol id="tee-os" viewBox="0 0 300 284">
-    <path d="M108 38 130 27c4 11 11 17 20 17s16-6 20-17l22 11 43 31-22 31-23-16v132H110V84l-23 16-22-31z" fill="#EEE9E0" stroke="#D1C9BD" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M131 29c3 10 9 15 19 15s16-5 19-15" fill="none" stroke="#C9C0B4" stroke-width="3"/>
-    <path d="M111 87v123m78-123v123M110 207h78M88 94l-12-17m138 17 12-17" fill="none" stroke="#D5CEC3" stroke-width="1.5"/>
-    <path d="M126 81h48v52h-48z" fill="none" stroke="#713A3E" stroke-opacity=".48" stroke-width=".8"/>
-    <use href="#pp-emblem" x="129" y="86" width="42" height="33"/>
-    <text x="150" y="127" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" letter-spacing="1.2" fill="#5E5850">ORIGINAL SPORTS</text>
-    <text x="150" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="4.5" letter-spacing="1.2" fill="#713A3E">EST. 1878 · COPENHAGEN</text>
+    <path d="M108 39 134 29Q150 48 166 29l26 10 54 34-23 38-25-16v147H102V95l-25 16-23-38z" fill="#F8F5EF" stroke="#D9D3CA" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M134 30Q150 51 166 30" fill="none" stroke="#D2CBC2" stroke-width="3"/>
+    <path d="M102 95v147h96V95m-96 147h96M77 111l-23-38m169 38 23-38" fill="none" stroke="#E3DED6" stroke-width="1.4"/>
+    <path d="M108 95h84v78h-84z" fill="none" stroke="#690003" stroke-opacity=".55" stroke-width="1.2"/>
+    <use href="#pp-emblem" x="124" y="100" width="52" height="41"/>
+    <text x="150" y="153" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" letter-spacing="1.1" fill="#34292A">ORIGINAL SPORTS</text>
+    <text x="150" y="164" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" letter-spacing="1.2" fill="#690003">EST. 1878 · COPENHAGEN</text>
   </symbol>
   <symbol id="tee-xo" viewBox="0 0 300 284">
-    <path d="M108 38 130 27c4 11 11 17 20 17s16-6 20-17l22 11 43 31-22 31-23-16v132H110V84l-23 16-22-31z" fill="#292724" stroke="#3D3934" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M131 29c3 10 9 15 19 15s16-5 19-15" fill="none" stroke="#555047" stroke-width="3"/>
-    <path d="M111 87v123m78-123v123M110 207h78M88 94l-12-17m138 17 12-17" fill="none" stroke="#49443D" stroke-width="1.5"/>
-    <path d="M126 81h48v52h-48z" fill="none" stroke="#D8AAA5" stroke-opacity=".6" stroke-width=".8"/>
-    <use href="#pp-emblem" class="tee-wreath-light" x="129" y="86" width="42" height="33"/>
-    <text x="150" y="127" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" letter-spacing="1.2" fill="#D7D0C6">X-OUTDOOR</text>
-    <text x="150" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="4.5" letter-spacing="1.2" fill="#D8AAA5">EST. 1878 · COPENHAGEN</text>
+    <path d="M108 39 134 29Q150 48 166 29l26 10 54 34-23 38-25-16v147H102V95l-25 16-23-38z" fill="#211E1F" stroke="#393334" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M134 30Q150 51 166 30" fill="none" stroke="#51494A" stroke-width="3"/>
+    <path d="M102 95v147h96V95m-96 147h96M77 111l-23-38m169 38 23-38" fill="none" stroke="#373233" stroke-width="1.4"/>
+    <path d="M108 95h84v78h-84z" fill="none" stroke="#F0E7E5" stroke-opacity=".72" stroke-width="1.2"/>
+    <use href="#pp-emblem" class="tee-wreath-light" x="124" y="100" width="52" height="41"/>
+    <text x="150" y="153" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" letter-spacing="1.2" fill="#F4EFEE">X-OUTDOOR</text>
+    <text x="150" y="164" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" letter-spacing="1.2" fill="#E8A6A3">EST. 1878 · COPENHAGEN</text>
   </symbol>
   <symbol id="tee-fv" viewBox="0 0 300 284">
-    <path d="M108 38 130 27c4 11 11 17 20 17s16-6 20-17l22 11 43 31-22 31-23-16v132H110V84l-23 16-22-31z" fill="#53604C" stroke="#3E4938" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M131 29c3 10 9 15 19 15s16-5 19-15" fill="none" stroke="#75816B" stroke-width="3"/>
-    <path d="M111 87v123m78-123v123M110 207h78M88 94l-12-17m138 17 12-17" fill="none" stroke="#68745F" stroke-width="1.5"/>
-    <path d="M126 81h48v52h-48z" fill="none" stroke="#E4E0D5" stroke-opacity=".6" stroke-width=".8"/>
-    <use href="#pp-emblem" class="tee-wreath-light" x="129" y="86" width="42" height="33"/>
-    <text x="150" y="127" text-anchor="middle" font-family="Arial,sans-serif" font-size="4.4" font-weight="700" letter-spacing=".8" fill="#E4E0D5">FRILUFTSVEJLEDER</text>
-    <text x="150" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="4.5" letter-spacing="1.2" fill="#E4E0D5">EST. 1878 · COPENHAGEN</text>
+    <path d="M108 39 134 29Q150 48 166 29l26 10 54 34-23 38-25-16v147H102V95l-25 16-23-38z" fill="#52634A" stroke="#3D4A36" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M134 30Q150 51 166 30" fill="none" stroke="#718167" stroke-width="3"/>
+    <path d="M102 95v147h96V95m-96 147h96M77 111l-23-38m169 38 23-38" fill="none" stroke="#69795F" stroke-width="1.4"/>
+    <path d="M108 95h84v78h-84z" fill="none" stroke="#F1EFE6" stroke-opacity=".75" stroke-width="1.2"/>
+    <use href="#pp-emblem" class="tee-wreath-light" x="124" y="100" width="52" height="41"/>
+    <text x="150" y="153" text-anchor="middle" font-family="Arial,sans-serif" font-size="5.6" font-weight="700" letter-spacing=".9" fill="#F1EFE6">FRILUFTSVEJLEDER</text>
+    <text x="150" y="164" text-anchor="middle" font-family="Arial,sans-serif" font-size="5" letter-spacing="1.2" fill="#F1EFE6">EST. 1878 · COPENHAGEN</text>
   </symbol>
 </svg>
 
